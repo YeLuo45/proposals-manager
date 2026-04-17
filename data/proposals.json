@@ -2,11 +2,11 @@
   "proposals": [
     {
       "id": "P-20250417-001",
-      "name": "提案包与访问链接管理系统",
-      "description": "新建独立仓库 proposals-manager；完整CRUD；GitHub API操作JSON数据",
+      "name": "proposals-manager",
+      "description": "新建独立仓库 proposals-manager；完整CRUD；GitHub API操作JSON数据；已与提案管理系统单向同步（提案系统→网站）",
       "type": "package",
-      "status": "in_dev",
-      "url": "",
+      "status": "active",
+      "url": "https://yeluo45.github.io/proposals-manager/",
       "packageUrl": "https://github.com/YeLuo45/提案包与访问链接管理系统/archive/refs/heads/main.zip",
       "tags": [
         "提案"
@@ -15,18 +15,32 @@
       "updatedAt": "2026-04-17"
     },
     {
+      "id": "P-20250417-002",
+      "name": "P-20250417-002",
+      "description": "Android Kotlin Hello World；包名 com.hello.android；minSdk 24, targetSdk 36；已有 debug APK；待上传 GitHub",
+      "type": "app",
+      "status": "active",
+      "url": "- `GitHub Repo`:",
+      "packageUrl": "",
+      "tags": [
+        "Android"
+      ],
+      "createdAt": "2026-04-17",
+      "updatedAt": "2026-04-17"
+    },
+    {
       "id": "P-20250416-003",
-      "name": "react-native-安卓计算器",
-      "description": "面向大众市场 APK；功能：科学计算 + 单位转换 + 汇率换算",
+      "name": "P-20250416-003",
+      "description": "面向大众市场 APK；功能：科学计算 + 单位转换 + 汇率换算；已与提案网站同步（type=app, status=in_dev）",
       "type": "package",
       "status": "in_dev",
-      "url": "",
+      "url": "- `GitHub Repo`:",
       "packageUrl": "https://github.com/YeLuo45/react-native-安卓计算器/archive/refs/heads/main.zip",
       "tags": [
         "提案"
       ],
       "createdAt": "2026-04-16",
-      "updatedAt": "2026-04-16"
+      "updatedAt": "2026-04-17"
     },
     {
       "id": "P-20250416-001",
@@ -47,7 +61,7 @@
     {
       "id": "P-20250416-002",
       "name": "game-1024",
-      "description": "经典1024玩法（4×4滑动合并，目标1024）+ PWA可安装到安卓主屏幕 + 存档/继续游戏 + 皮肤系统 + 已部署至GitHub Pages",
+      "description": "经典1024玩法（4×4滑动合并，目标1024）+ PWA可安装到安卓主屏幕 + 存档/继续游戏 + 皮肤系统 + 已部署至GitHub Pages；已与提案网站同步",
       "type": "package",
       "status": "active",
       "url": "https://yeluo45.github.io/game-1024/",
