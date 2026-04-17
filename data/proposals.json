@@ -1,35 +1,46 @@
 {
   "proposals": [
     {
-      "id": "P-20260412-008",
-      "name": "ai-subscription",
-      "description": "多端独立应用（Web + 小程序 + PC + Android）；Web 已部署 GitHub Pages；AI 摘要、RSS订阅、GitHub Trending 爬取",
-      "type": "package",
-      "status": "active",
-      "url": "https://yeluo45.github.io/ai-subscription/",
-      "packageUrl": "https://github.com/YeLuo45/ai-subscription/archive/refs/heads/master.zip",
-      "tags": [
-        "AI",
-        "RSS",
-        "Web"
-      ],
-      "createdAt": "2026-04-12",
-      "updatedAt": "2026-04-18"
-    },
-    {
       "id": "P-20250418-001",
-      "name": "pixel-pal-web",
-      "description": "Electron + React Web 应用；功能：PixelPal 宠物、任务管理、日历、邮件(Gmail)、AI聊天、文档解析；已部署 GitHub Pages",
+      "name": "monopoly3d",
+      "description": "Vite + React + Three.js + @react-three/fiber + Tailwind CSS 3；3D 大富翁桌游；Node 18 兼容性问题修复（Tailwind v4→v3，Vite v8→v5）；已部署 GitHub Pages；项目文件（含构建产物）推送至 gh-pages 分支",
       "type": "package",
       "status": "active",
       "url": "https://YeLuo45.github.io/pixel-pal-web",
       "packageUrl": "https://github.com/YeLuo45/pixel-pal-web/archive/refs/heads/master.zip",
       "tags": [
-        "Electron",
-        "React",
+        "提案"
+      ],
+      "createdAt": "2026-04-18",
+      "updatedAt": "2026-04-18"
+    },
+    {
+      "id": "P-20260412-007",
+      "name": "ai-creator-miniprogram",
+      "description": "微信小程序 Phase 1 MVP 骨架（4页面：首页/生成/历史/我的）；当前任务：H5 版本开发以支持 GitHub Pages 部署；需适配 wx.* API → Web API (localStorage/fetch)",
+      "type": "package",
+      "status": "in_dev",
+      "url": "",
+      "packageUrl": "https://github.com/YeLuo45/ai-creator-miniprogram/archive/refs/heads/main.zip",
+      "tags": [
         "Web"
       ],
       "createdAt": "2026-04-18",
+      "updatedAt": "2026-04-18"
+    },
+    {
+      "id": "P-20260412-008",
+      "name": "ai-subscription",
+      "description": "多端独立应用（Web + 小程序 + PC + Android）；Web 已部署 GitHub Pages；AI 摘要、RSS订阅、GitHub Trending 爬取；四端数据各自独立存储",
+      "type": "package",
+      "status": "active",
+      "url": "https://yeluo45.github.io/ai-subscription/",
+      "packageUrl": "https://github.com/YeLuo45/ai-subscription/archive/refs/heads/master.zip",
+      "tags": [
+        "Web",
+        "Android"
+      ],
+      "createdAt": "2026-04-12",
       "updatedAt": "2026-04-18"
     },
     {
@@ -62,7 +73,7 @@
     },
     {
       "id": "P-20250416-003",
-      "name": "react-native-安卓计算器",
+      "name": "calculator-app",
       "description": "面向大众市场 APK；功能：科学计算 + 单位转换 + 汇率换算；已与提案网站同步（type=app, status=in_dev）",
       "type": "package",
       "status": "in_dev",
@@ -108,20 +119,16 @@
     {
       "id": "P-20260412-009",
       "name": "ai-stock-simulation",
-      "description": "AI驱动的股票模拟交易平台，支持AI智能选股、策略回测、模拟交易、技术分析；多模型支持（MiniMax/智谱/Claude/Gemini）；已部署 GitHub Pages（Demo模式）",
+      "description": "全栈FastAPI+React项目；前端端口3100，后端端口8000；需本地启动后端服务",
       "type": "package",
       "status": "active",
       "url": "https://yeluo45.github.io/ai-stock-simulation/",
       "packageUrl": "https://github.com/YeLuo45/ai-stock-simulation/archive/refs/heads/master.zip",
       "tags": [
-        "全栈",
-        "FastAPI",
-        "React",
-        "股票",
-        "AI"
+        "提案"
       ],
       "createdAt": "2026-04-12",
-      "updatedAt": "2026-04-18"
+      "updatedAt": "2026-04-12"
     }
   ]
 }
