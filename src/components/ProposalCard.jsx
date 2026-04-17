@@ -17,8 +17,13 @@ export default function ProposalCard({ proposal: p, viewMode, onEdit, onDelete, 
             </a>
           )}
           {p.packageUrl && (
-            <a href={p.packageUrl} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline text-sm">
+            <a href={p.packageUrl} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline text-sm mr-2">
               下载
+            </a>
+          )}
+          {p.gitRepo && (
+            <a href={p.gitRepo} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:underline text-sm" title="GitHub 仓库">
+              🐙
             </a>
           )}
         </td>
@@ -57,6 +62,11 @@ export default function ProposalCard({ proposal: p, viewMode, onEdit, onDelete, 
         {p.packageUrl && (
           <button onClick={() => onCopy(p.packageUrl)} className="text-xs bg-gray-100 hover:bg-gray-200 px-2 py-1 rounded flex items-center gap-1">
             📥 复制下载链接
+          </button>
+        )}
+        {p.gitRepo && (
+          <button onClick={() => onCopy(p.gitRepo)} className="text-xs bg-gray-100 hover:bg-gray-200 px-2 py-1 rounded flex items-center gap-1" title={p.gitRepo}>
+            🐙 复制仓库链接
           </button>
         )}
       </div>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const emptyForm = { name: '', description: '', type: 'web', status: 'active', url: '', packageUrl: '', tags: '' }
+const emptyForm = { name: '', description: '', type: 'web', status: 'active', url: '', packageUrl: '', gitRepo: '', tags: '' }
 
 export default function ProposalForm({ proposal, onSave, onClose }) {
   const [form, setForm] = useState(emptyForm)
@@ -14,6 +14,7 @@ export default function ProposalForm({ proposal, onSave, onClose }) {
         status: proposal.status || 'active',
         url: proposal.url || '',
         packageUrl: proposal.packageUrl || '',
+        gitRepo: proposal.gitRepo || '',
         tags: (proposal.tags || []).join(', '),
       })
     }
@@ -77,6 +78,12 @@ export default function ProposalForm({ proposal, onSave, onClose }) {
               <input value={form.packageUrl} onChange={e => setForm(f => ({ ...f, packageUrl: e.target.value }))}
                 className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="https://github.com/.../releases/..." />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">GitHub 仓库链接</label>
+              <input value={form.gitRepo} onChange={e => setForm(f => ({ ...f, gitRepo: e.target.value }))}
+                className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="https://github.com/YeLuo45/..." />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">标签 (逗号分隔)</label>
