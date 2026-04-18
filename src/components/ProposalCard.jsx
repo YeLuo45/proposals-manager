@@ -6,7 +6,13 @@ export default function ProposalCard({ proposal: p, viewMode, onEdit, onDelete, 
     return (
       <tr className="border-b hover:bg-gray-50">
         <td className="py-2 px-3 font-mono text-sm">{p.id}</td>
-        <td className="py-2 px-3 font-medium">{p.name}</td>
+        <td className="py-2 px-3 font-medium">
+          {p.url ? (
+            <a href={p.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">{p.name}</a>
+          ) : (
+            <span className="text-gray-800">{p.name}</span>
+          )}
+        </td>
         <td className="py-2 px-3 text-sm text-gray-600 max-w-xs truncate">{p.description}</td>
         <td className="py-2 px-3">{TYPE_LABELS[p.type] || p.type}</td>
         <td className="py-2 px-3 text-sm">{STATUS_LABELS[p.status] || p.status}</td>
@@ -41,7 +47,13 @@ export default function ProposalCard({ proposal: p, viewMode, onEdit, onDelete, 
         <span className="font-mono text-xs text-gray-500">{p.id}</span>
         <span className="text-lg">{TYPE_LABELS[p.type] || '📦'}</span>
       </div>
-      <h3 className="font-semibold text-lg mb-1 truncate">{p.name}</h3>
+      <h3 className="font-semibold text-lg mb-1 truncate">
+        {p.url ? (
+          <a href={p.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">{p.name}</a>
+        ) : (
+          <span className="text-gray-800">{p.name}</span>
+        )}
+      </h3>
       <p className="text-gray-600 text-sm mb-3 line-clamp-2">{p.description || '无描述'}</p>
 
       <div className="text-xs text-gray-500 mb-3">
