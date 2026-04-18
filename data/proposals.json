@@ -8,6 +8,7 @@
       "status": "active",
       "url": "https://YeLuo45.github.io/pixel-pal-web",
       "packageUrl": "https://github.com/YeLuo45/pixel-pal-web/archive/refs/heads/master.zip",
+      "gitRepo": "",
       "tags": [
         "提案"
       ],
@@ -22,6 +23,7 @@
       "status": "active",
       "url": "https://yeluo45.github.io/ai-creator-h5/",
       "packageUrl": "https://github.com/YeLuo45/ai-creator-h5 (H5)/archive/refs/heads/main.zip",
+      "gitRepo": "",
       "tags": [
         "Web"
       ],
@@ -36,6 +38,7 @@
       "status": "active",
       "url": "https://yeluo45.github.io/ai-subscription/",
       "packageUrl": "https://github.com/YeLuo45/ai-subscription/archive/refs/heads/main.zip",
+      "gitRepo": "",
       "tags": [
         "Web",
         "Android"
@@ -51,6 +54,7 @@
       "status": "active",
       "url": "https://yeluo45.github.io/proposals-manager/",
       "packageUrl": "https://github.com/YeLuo45/proposals-manager/archive/refs/heads/main.zip",
+      "gitRepo": "",
       "tags": [
         "提案"
       ],
@@ -65,6 +69,7 @@
       "status": "active",
       "url": "https://github.com/YeLuo45/android-hello/releases/download/v1.0.0/app-debug.apk",
       "packageUrl": "https://github.com/YeLuo45/android-hello/releases/download/v1.0.0/app-debug.apk",
+      "gitRepo": "",
       "tags": [
         "Android"
       ],
@@ -79,6 +84,7 @@
       "status": "in_dev",
       "url": "",
       "packageUrl": "https://github.com/YeLuo45/calculator-app/archive/refs/heads/main.zip",
+      "gitRepo": "",
       "tags": [
         "提案"
       ],
@@ -93,6 +99,7 @@
       "status": "active",
       "url": "https://yeluo45.github.io/todo-list/",
       "packageUrl": "https://github.com/YeLuo45/todo-list/archive/refs/heads/main.zip",
+      "gitRepo": "",
       "tags": [
         "Web",
         "Windows"
@@ -108,6 +115,7 @@
       "status": "active",
       "url": "https://yeluo45.github.io/game-1024/",
       "packageUrl": "https://github.com/YeLuo45/game-1024/archive/refs/heads/main.zip",
+      "gitRepo": "",
       "tags": [
         "Web",
         "PWA",
@@ -124,6 +132,7 @@
       "status": "active",
       "url": "",
       "packageUrl": "https://github.com/YeLuo45/ai-stock-simulation/archive/refs/heads/main.zip",
+      "gitRepo": "",
       "tags": [
         "提案"
       ],
@@ -138,6 +147,7 @@
       "status": "active",
       "url": "https://github.com/YeLuo45/harness-desktop/releases/tag/v1.0.0",
       "packageUrl": "https://github.com/YeLuo45/harness-desktop/releases/download/v1.0.0/Harness.Desktop.1.0.0.exe",
+      "gitRepo": "",
       "tags": [
         "提案"
       ],
@@ -152,6 +162,7 @@
       "status": "active",
       "url": "https://yeluo45.github.io/future-little-leaders/",
       "packageUrl": "https://github.com/YeLuo45/future-little-leaders/archive/refs/heads/main.zip",
+      "gitRepo": "",
       "tags": [
         "提案"
       ],
