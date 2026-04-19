@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 
 const emptyForm = { name: '', description: '', type: 'web', status: 'active', url: '', packageUrl: '', gitRepo: '', tags: '' }
 
-export default function ProposalForm({ proposal, onSave, onClose }) {
+export default function ProposalForm({ proposal, projectId, onSave, onClose }) {
   const [form, setForm] = useState(emptyForm)
 
   useEffect(() => {
@@ -17,6 +17,8 @@ export default function ProposalForm({ proposal, onSave, onClose }) {
         gitRepo: proposal.gitRepo || '',
         tags: (proposal.tags || []).join(', '),
       })
+    } else {
+      setForm(emptyForm)
     }
   }, [proposal])
 
@@ -33,19 +35,19 @@ export default function ProposalForm({ proposal, onSave, onClose }) {
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
       <div className="bg-white rounded-lg shadow-xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
         <div className="p-6">
-          <h2 className="text-xl font-bold mb-4">{proposal ? '编辑提案' : '新增提案'}</h2>
+          <h2 className="text-xl font-bold mb-4">{proposal ? '编辑提案' : '新增提案'}{projectId ? ` (${projectId})` : ''}</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">名称 *</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">提案名称 *</label>
               <input value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
                 className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="如: game-1024" />
+                placeholder="如: v1.0 功能规划" />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">描述</label>
               <textarea value={form.description} onChange={e => setForm(f => ({ ...f, description: e.target.value }))}
                 className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                rows={2} placeholder="项目简介..." />
+                rows={2} placeholder="提案简介..." />
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div>

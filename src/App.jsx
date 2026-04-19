@@ -2,7 +2,8 @@ import { useState, useEffect, useCallback } from 'react'
 import Header from './components/Header'
 import SearchBar from './components/SearchBar'
 import FilterBar from './components/FilterBar'
-import ProposalCard from './components/ProposalCard'
+import ProjectCard from './components/ProjectCard'
+import ProjectForm from './components/ProjectForm'
 import ProposalForm from './components/ProposalForm'
 import { useGitHub } from './hooks/useGitHub'
 
@@ -22,53 +23,126 @@ export default function App() {
   const [statusFilter, setStatusFilter] = useState('all')
   const [viewMode, setViewMode] = useState('card')
   const [page, setPage] = useState(1)
-  const [showForm, setShowForm] = useState(false)
-  const [editing, setEditing] = useState(null)
+  const [showProjectForm, setShowProjectForm] = useState(false)
+  const [showProposalForm, setShowProposalForm] = useState(false)
+  const [editingProject, setEditingProject] = useState(null)
+  const [editingProposal, setEditingProposal] = useState(null)
+  const [editingProposalProjectId, setEditingProposalProjectId] = useState(null)
   const [showTokenInput, setShowTokenInput] = useState(false)
 
   const PAGE_SIZE = 12
 
-  const filtered = data?.proposals?.filter(p => {
+  // Project-level data (flattened for filtering)
+  const projects = data?.projects || []
+
+  const filtered = projects.filter(prj => {
     const matchSearch =
       !search ||
-      p.name.toLowerCase().includes(search.toLowerCase()) ||
-      p.description?.toLowerCase().includes(search.toLowerCase()) ||
-      p.tags?.some(t => t.toLowerCase().includes(search.toLowerCase()))
-    const matchType = typeFilter === 'all' || p.type === typeFilter
-    const matchStatus = statusFilter === 'all' || p.status === statusFilter
+      prj.name.toLowerCase().includes(search.toLowerCase()) ||
+      prj.description?.toLowerCase().includes(search.toLowerCase()) ||
+      prj.proposals?.some(p =>
+        p.name.toLowerCase().includes(search.toLowerCase()) ||
+        p.description?.toLowerCase().includes(search.toLowerCase()) ||
+        p.tags?.some(t => t.toLowerCase().includes(search.toLowerCase()))
+      )
+    const matchType = typeFilter === 'all' || prj.proposals?.some(p => p.type === typeFilter)
+    const matchStatus = statusFilter === 'all' || prj.proposals?.some(p => p.status === statusFilter)
     return matchSearch && matchType && matchStatus
-  }) || []
+  })
 
   const totalPages = Math.ceil(filtered.length / PAGE_SIZE)
   const paginated = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)
 
   useEffect(() => { setPage(1) }, [search, typeFilter, statusFilter])
 
-  const handleSave = useCallback(async (proposal) => {
-    let proposals = data?.proposals || []
-    if (editing) {
-      proposals = proposals.map(p => p.id === editing.id ? { ...proposal, id: editing.id, updatedAt: new Date().toISOString().split('T')[0] } : p)
+  // Project CRUD
+  const handleSaveProject = useCallback(async (projectData) => {
+    let projects = data?.projects || []
+    if (editingProject) {
+      projects = projects.map(p => p.id === editingProject.id
+        ? { ...p, ...projectData, updatedAt: new Date().toISOString().split('T')[0] }
+        : p)
     } else {
       const today = new Date().toISOString().split('T')[0].replace(/-/g, '')
-      const todayProposals = proposals.filter(p => p.id.startsWith(`P-${today}`))
-      const seq = String(todayProposals.length + 1).padStart(3, '0')
-      const newProposal = { ...proposal, id: `P-${today}-${seq}`, createdAt: new Date().toISOString().split('T')[0], updatedAt: new Date().toISOString().split('T')[0] }
-      proposals = [newProposal, ...proposals]
+      const todayProjects = projects.filter(p => p.id.startsWith(`PRJ-${today}`))
+      const seq = String(todayProjects.length + 1).padStart(3, '0')
+      const newProject = {
+        ...projectData,
+        id: `PRJ-${today}-${seq}`,
+        proposals: [],
+        createdAt: new Date().toISOString().split('T')[0],
+        updatedAt: new Date().toISOString().split('T')[0]
+      }
+      projects = [newProject, ...projects]
     }
-    await saveData({ proposals })
-    setShowForm(false)
-    setEditing(null)
-  }, [data, editing, saveData])
+    await saveData({ version: 2, projects })
+    setShowProjectForm(false)
+    setEditingProject(null)
+  }, [data, editingProject, saveData])
 
-  const handleEdit = useCallback((proposal) => {
-    setEditing(proposal)
-    setShowForm(true)
+  const handleDeleteProject = useCallback(async (id) => {
+    if (!window.confirm('确定删除？删除项目会同时删除其下所有提案。')) return
+    const projects = (data?.projects || []).filter(p => p.id !== id)
+    await saveData({ version: 2, projects })
+  }, [data, saveData])
+
+  // Proposal CRUD
+  const handleAddProposal = useCallback((project) => {
+    setEditingProposal(null)
+    setEditingProposalProjectId(project.id)
+    setShowProposalForm(true)
   }, [])
 
-  const handleDelete = useCallback(async (id) => {
-    if (!window.confirm('确定删除？')) return
-    const proposals = (data?.proposals || []).filter(p => p.id !== id)
-    await saveData({ proposals })
+  const handleEditProposal = useCallback((projectId, proposal) => {
+    setEditingProposal(proposal)
+    setEditingProposalProjectId(projectId)
+    setShowProposalForm(true)
+  }, [])
+
+  const handleSaveProposal = useCallback(async (proposalData) => {
+    let projects = data?.projects || []
+    if (editingProposal) {
+      // Update existing proposal
+      projects = projects.map(prj => ({
+        ...prj,
+        proposals: prj.proposals.map(p =>
+          p.id === editingProposal.id
+            ? { ...p, ...proposalData, updatedAt: new Date().toISOString().split('T')[0] }
+            : p
+        )
+      }))
+    } else {
+      // Create new proposal under the project
+      const today = new Date().toISOString().split('T')[0].replace(/-/g, '')
+      const project = projects.find(p => p.id === editingProposalProjectId)
+      const todayProposals = project?.proposals?.filter(p => p.id.startsWith(`P-${today}`)) || []
+      const seq = String(todayProposals.length + 1).padStart(3, '0')
+      const newProposal = {
+        ...proposalData,
+        id: `P-${today}-${seq}`,
+        createdAt: new Date().toISOString().split('T')[0],
+        updatedAt: new Date().toISOString().split('T')[0]
+      }
+      projects = projects.map(prj =>
+        prj.id === editingProposalProjectId
+          ? { ...prj, proposals: [...(prj.proposals || []), newProposal], updatedAt: new Date().toISOString().split('T')[0] }
+          : prj
+      )
+    }
+    await saveData({ version: 2, projects })
+    setShowProposalForm(false)
+    setEditingProposal(null)
+    setEditingProposalProjectId(null)
+  }, [data, editingProposal, editingProposalProjectId, saveData])
+
+  const handleDeleteProposal = useCallback(async (projectId, proposalId) => {
+    if (!window.confirm('确定删除此提案？')) return
+    const projects = (data?.projects || []).map(prj =>
+      prj.id === projectId
+        ? { ...prj, proposals: prj.proposals.filter(p => p.id !== proposalId) }
+        : prj
+    )
+    await saveData({ version: 2, projects })
   }, [data, saveData])
 
   const handleCopy = useCallback((text) => {
@@ -79,12 +153,12 @@ export default function App() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
         <div className="bg-white p-8 rounded-lg shadow-md max-w-md w-full">
-          <h1 className="text-2xl font-bold mb-4 text-center">提案管理系统</h1>
+          <h1 className="text-2xl font-bold mb-4 text-center">项目管理系统</h1>
           <p className="text-gray-600 mb-4 text-sm">请输入 GitHub Personal Access Token 以访问数据</p>
           <input
             type="password"
             id="token-input"
-            placeholder="ghp_xxxxxxxxxxxx"
+            placeholder="***"
             className="w-full border border-gray-300 rounded px-3 py-2 mb-3"
           />
           <button
@@ -135,43 +209,49 @@ export default function App() {
             <thead>
               <tr className="bg-gray-50 border-b">
                 <th className="text-left py-2 px-3 text-sm font-medium text-gray-600">ID</th>
-                <th className="text-left py-2 px-3 text-sm font-medium text-gray-600">名称</th>
+                <th className="text-left py-2 px-3 text-sm font-medium text-gray-600">项目名称</th>
                 <th className="text-left py-2 px-3 text-sm font-medium text-gray-600">描述</th>
-                <th className="text-left py-2 px-3 text-sm font-medium text-gray-600">类型</th>
-                <th className="text-left py-2 px-3 text-sm font-medium text-gray-600">状态</th>
+                <th className="text-left py-2 px-3 text-sm font-medium text-gray-600">提案</th>
                 <th className="text-left py-2 px-3 text-sm font-medium text-gray-600">操作</th>
+                <th className="text-left py-2 px-3 text-sm font-medium text-gray-600">管理</th>
               </tr>
             </thead>
             <tbody>
-              {paginated.map(p => (
-                <ProposalCard
-                  key={p.id}
-                  proposal={p}
+              {paginated.map(prj => (
+                <ProjectCard
+                  key={prj.id}
+                  project={prj}
                   viewMode="table"
-                  onEdit={handleEdit}
-                  onDelete={handleDelete}
+                  onEditProject={(p) => { setEditingProject(p); setShowProjectForm(true) }}
+                  onDeleteProject={handleDeleteProject}
+                  onAddProposal={handleAddProposal}
+                  onEditProposal={handleEditProposal}
+                  onDeleteProposal={handleDeleteProposal}
                   onCopy={handleCopy}
                 />
               ))}
               {paginated.length === 0 && (
-                <tr><td colSpan={6} className="text-center py-8 text-gray-500">暂无提案</td></tr>
+                <tr><td colSpan={6} className="text-center py-8 text-gray-500">暂无项目</td></tr>
               )}
             </tbody>
           </table>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-            {paginated.map(p => (
-              <ProposalCard
-                key={p.id}
-                proposal={p}
+            {paginated.map(prj => (
+              <ProjectCard
+                key={prj.id}
+                project={prj}
                 viewMode="card"
-                onEdit={handleEdit}
-                onDelete={handleDelete}
+                onEditProject={(p) => { setEditingProject(p); setShowProjectForm(true) }}
+                onDeleteProject={handleDeleteProject}
+                onAddProposal={handleAddProposal}
+                onEditProposal={handleEditProposal}
+                onDeleteProposal={handleDeleteProposal}
                 onCopy={handleCopy}
               />
             ))}
             {paginated.length === 0 && !loading && (
-              <p className="col-span-full text-center text-gray-500 py-8">暂无提案</p>
+              <p className="col-span-full text-center text-gray-500 py-8">暂无项目</p>
             )}
           </div>
         )}
@@ -187,21 +267,30 @@ export default function App() {
         )}
 
         <div className="flex justify-between items-center mb-4">
-          <p className="text-gray-600 text-sm">共 {filtered.length} 条提案</p>
+          <p className="text-gray-600 text-sm">共 {filtered.length} 个项目</p>
           <button
-            onClick={() => { setEditing(null); setShowForm(true) }}
+            onClick={() => { setEditingProject(null); setShowProjectForm(true) }}
             className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
           >
-            + 新增提案
+            + 新增项目
           </button>
         </div>
       </div>
 
-      {showForm && (
+      {showProjectForm && (
+        <ProjectForm
+          project={editingProject}
+          onSave={handleSaveProject}
+          onClose={() => { setShowProjectForm(false); setEditingProject(null) }}
+        />
+      )}
+
+      {showProposalForm && (
         <ProposalForm
-          proposal={editing}
-          onSave={handleSave}
-          onClose={() => { setShowForm(false); setEditing(null) }}
+          proposal={editingProposal}
+          projectId={editingProposalProjectId}
+          onSave={handleSaveProposal}
+          onClose={() => { setShowProposalForm(false); setEditingProposal(null); setEditingProposalProjectId(null) }}
         />
       )}
     </div>

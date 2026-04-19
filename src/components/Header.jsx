@@ -6,7 +6,7 @@ export default function Header({ onConfig, showTokenInput, onTokenSave }) {
   return (
     <header className="bg-white shadow">
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-        <h1 className="text-xl font-bold text-gray-800">📦 提案管理系统</h1>
+        <h1 className="text-xl font-bold text-gray-800">📦 项目管理系统</h1>
         <button onClick={onConfig} className="text-sm text-blue-600 hover:underline">
           {showTokenInput ? '收起' : '⚙️ 配置'}
         </button>
