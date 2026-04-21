@@ -2,6 +2,32 @@
   "version": 2,
   "projects": [
     {
+      "id": "PRJ-20250421-001",
+      "name": "card-game-prototype",
+      "description": "DBG类卡牌（杀戮尖塔-like）；原型验证核心战斗循环+卡牌构筑；技术方案已确认转dev",
+      "url": "",
+      "gitRepo": "",
+      "createdAt": "2026-04-21",
+      "updatedAt": "2026-04-21",
+      "proposals": [
+        {
+          "id": "P-20250421-001",
+          "name": "card-game-prototype",
+          "description": "DBG类卡牌（杀戮尖塔-like）；原型验证核心战斗循环+卡牌构筑；技术方案已确认转dev",
+          "type": "package",
+          "status": "in_dev",
+          "url": "",
+          "packageUrl": "https://github.com/YeLuo45/card-game-prototype/archive/refs/heads/main.zip",
+          "gitRepo": "",
+          "tags": [
+            "提案"
+          ],
+          "createdAt": "2026-04-21",
+          "updatedAt": "2026-04-21"
+        }
+      ]
+    },
+    {
       "id": "PRJ-20250418-001",
       "name": "monopoly3d",
       "description": "Vite + React + Three.js + @react-three/fiber + Tailwind CSS 3；3D 大富翁桌游；Node 18 兼容性问题修复（Tailwind v4→v3，Vite v8→v5）；已部署 GitHub Pages；项目文件（含构建产物）推送至 gh-pages 分支",
@@ -348,7 +374,7 @@
     {
       "id": "PRJ-20260419-005",
       "name": "hermes-agent-collab",
-      "description": "Python asyncio + websockets/FastAPI；工作区CRUD、Agent Profile、任务生命周期（pending→claimed→in_progress→completed/failed/blocked）、WebSocket实时推送、技能系统、CLI命令；独立Web协作面板；数据存储在~/.hermes/workspaces/；验收发现并修复5处CLI bug（TaskManager别名缺失、AgentStatus.ONLINE不存在、TaskStatus.CANCELLED不存在、Task字段名不匹配等）；Web UI在hermes-collab-web/dist",
+      "description": "Python asyncio + websockets/FastAPI；工作区CRUD、Agent Profile、任务生命周期（pending→claimed→in_progress→completed/failed/blocked）、WebSocket实时推送、技能系统、CLI命令；独立Web协作面板；数据存储在~/.hermes/workspaces/；验收发现并修复5处CLI bug（TaskManager别名缺失、AgentStatus.ONLINE不存在、TaskStatus.CANCELLED不存在、Task字段名不匹配等）；Web UI部署于GitHub Pages: https://yeluo45.github.io/hermes-agent-collab/",
       "url": "",
       "gitRepo": "https://github.com/YeLuo45/hermes-agent-collab",
       "createdAt": "2026-04-20",
@@ -356,12 +382,12 @@
       "proposals": [
         {
           "id": "P-20260419-005",
-          "name": "hermes-agent",
-          "description": "Python asyncio + websockets/FastAPI；工作区CRUD、Agent Profile、任务生命周期（pending→claimed→in_progress→completed/failed/blocked）、WebSocket实时推送、技能系统、CLI命令；独立Web协作面板；数据存储在~/.hermes/workspaces/；验收发现并修复5处CLI bug（TaskManager别名缺失、AgentStatus.ONLINE不存在、TaskStatus.CANCELLED不存在、Task字段名不匹配等）；Web UI在hermes-collab-web/dist",
+          "name": "hermes-agent-collab",
+          "description": "Python asyncio + websockets/FastAPI；工作区CRUD、Agent Profile、任务生命周期（pending→claimed→in_progress→completed/failed/blocked）、WebSocket实时推送、技能系统、CLI命令；独立Web协作面板；数据存储在~/.hermes/workspaces/；验收发现并修复5处CLI bug（TaskManager别名缺失、AgentStatus.ONLINE不存在、TaskStatus.CANCELLED不存在、Task字段名不匹配等）；Web UI部署于GitHub Pages: https://yeluo45.github.io/hermes-agent-collab/",
           "type": "package",
           "status": "in_dev",
           "url": "",
-          "packageUrl": "https://github.com/YeLuo45/hermes-agent/archive/refs/heads/main.zip",
+          "packageUrl": "https://github.com/YeLuo45/hermes-agent-collab/archive/refs/heads/main.zip",
           "gitRepo": "https://github.com/YeLuo45/hermes-agent-collab",
           "tags": [
             "Web"
