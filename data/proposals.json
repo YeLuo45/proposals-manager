@@ -3,22 +3,22 @@
   "projects": [
     {
       "id": "PRJ-20260422-001",
-      "name": "待创建",
-      "description": "2.5D侧视角射击+单人剧情；引擎Godot 4；WSL网络受限，需确认HTML5导出方案",
+      "name": "soulshooter",
+      "description": "街机快节奏射击；枪/近战/技能+弹药+翻滚+格挡+弹反+跳跃+蹬墙；1关卡+多敌人+存档点+Boss；像素风2D+程序化场景；WSL网络受限，HTML5版用纯JS实现；PRD超时默认通过",
       "url": "",
-      "gitRepo": "",
+      "gitRepo": "https://github.com/YeLuo45/soulshooter",
       "createdAt": "2026-04-22",
       "updatedAt": "2026-04-22",
       "proposals": [
         {
           "id": "P-20260422-001",
-          "name": "room-escape-puzzle",
-          "description": "解谜游戏：房间逃脱 - Godot 4 原型验证项目；5个关卡、物品系统、存档系统；已部署 GitHub Pages",
+          "name": "soulshooter",
+          "description": "街机快节奏射击；枪/近战/技能+弹药+翻滚+格挡+弹反+跳跃+蹬墙；1关卡+多敌人+存档点+Boss；像素风2D+程序化场景；WSL网络受限，HTML5版用纯JS实现；PRD超时默认通过",
           "type": "package",
           "status": "active",
-          "url": "https://yeluo45.github.io/room-escape-puzzle/",
-          "packageUrl": "https://github.com/YeLuo45/room-escape-puzzle/archive/refs/heads/main.zip",
-          "gitRepo": "https://github.com/YeLuo45/room-escape-puzzle",
+          "url": "",
+          "packageUrl": "https://github.com/YeLuo45/soulshooter/archive/refs/heads/main.zip",
+          "gitRepo": "https://github.com/YeLuo45/soulshooter",
           "tags": [
             "提案"
           ],
@@ -426,26 +426,26 @@
     {
       "id": "PRJ-20260419-004",
       "name": "TradingAgents-CN",
-      "description": "AI 量化交易代理系统；Python 3.10+；混合许可证（Apache 2.0 开源 + 专有前端后端需商业授权）；包含 FastAPI 后端 + Vue 前端 + Docker 部署；基于 TauricResearch/TradingAgents",
+      "description": "8x8三消游戏原型验证，纯HTML5 Canvas",
       "url": "",
       "gitRepo": "https://github.com/YeLuo45/TradingAgents-CN",
-      "createdAt": "2026-04-19",
-      "updatedAt": "2026-04-19",
+      "createdAt": "2026-04-22",
+      "updatedAt": "2026-04-22",
       "proposals": [
         {
           "id": "P-20260419-004",
           "name": "TradingAgents-CN",
-          "description": "AI 量化交易代理系统；Python 3.10+；混合许可证（Apache 2.0 开源 + 专有前端后端需商业授权）；包含 FastAPI 后端 + Vue 前端 + Docker 部署；基于 TauricResearch/TradingAgents",
+          "description": "8x8三消游戏原型验证，纯HTML5 Canvas",
           "type": "package",
-          "status": "active",
+          "status": "in_dev",
           "url": "",
           "packageUrl": "https://github.com/YeLuo45/TradingAgents-CN/archive/refs/heads/main.zip",
           "gitRepo": "https://github.com/YeLuo45/TradingAgents-CN",
           "tags": [
-            "提案"
+            "游戏"
           ],
-          "createdAt": "2026-04-19",
-          "updatedAt": "2026-04-19"
+          "createdAt": "2026-04-22",
+          "updatedAt": "2026-04-22"
         }
       ]
     }
