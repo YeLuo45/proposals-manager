@@ -29,22 +29,22 @@
     },
     {
       "id": "PRJ-20260422-002",
-      "name": "soulshooter",
+      "name": "ash-echoes",
       "description": "街机快节奏射击；枪/近战/技能+弹药+翻滚+格挡+弹反+跳跃+蹬墙；1关卡+多敌人+存档点+Boss；像素风2D+程序化场景；WSL网络受限，HTML5版用纯JS实现；PRD超时默认通过",
-      "url": "https://yeluo45.github.io/soulshooter/",
-      "gitRepo": "https://github.com/YeLuo45/soulshooter",
+      "url": "https://yeluo45.github.io/ash-echoes/",
+      "gitRepo": "https://github.com/YeLuo45/ash-echoes",
       "createdAt": "2026-04-22",
       "updatedAt": "2026-04-22",
       "proposals": [
         {
           "id": "P-20260422-002",
-          "name": "soulshooter",
+          "name": "ash-echoes",
           "description": "街机快节奏射击；枪/近战/技能+弹药+翻滚+格挡+弹反+跳跃+蹬墙；1关卡+多敌人+存档点+Boss；像素风2D+程序化场景；WSL网络受限，HTML5版用纯JS实现；PRD超时默认通过",
           "type": "package",
           "status": "active",
-          "url": "https://yeluo45.github.io/soulshooter/",
-          "packageUrl": "https://github.com/YeLuo45/soulshooter/archive/refs/heads/main.zip",
-          "gitRepo": "https://github.com/YeLuo45/soulshooter",
+          "url": "https://yeluo45.github.io/ash-echoes/",
+          "packageUrl": "https://github.com/YeLuo45/ash-echoes/archive/refs/heads/main.zip",
+          "gitRepo": "https://github.com/YeLuo45/ash-echoes",
           "tags": [
             "提案"
           ],
