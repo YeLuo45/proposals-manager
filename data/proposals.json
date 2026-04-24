@@ -478,26 +478,26 @@
     {
       "id": "PRJ-20260422-004",
       "name": "animal-forest",
-      "description": "教育类/动物森林主题/卡通风格/双模式(3-6岁幼儿+7-12岁儿童)/家长面板",
+      "description": "教育类/动物森林主题/卡通风格/双模式(3-6岁幼儿+7-12岁儿童)/家长面板；纯HTML5单文件，浏览器直接运行",
       "url": "https://yeluo45.github.io/animal-forest/",
       "gitRepo": "https://github.com/YeLuo45/animal-forest",
-      "createdAt": "2026-04-22",
-      "updatedAt": "2026-04-22",
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24",
       "proposals": [
         {
           "id": "P-20260422-004",
           "name": "animal-forest",
-          "description": "教育类/动物森林主题/卡通风格/双模式(3-6岁幼儿+7-12岁儿童)/家长面板",
+          "description": "教育类/动物森林主题/卡通风格/双模式(3-6岁幼儿+7-12岁儿童)/家长面板；纯HTML5单文件，浏览器直接运行",
           "type": "package",
-          "status": "in_dev",
+          "status": "active",
           "url": "https://yeluo45.github.io/animal-forest/",
           "packageUrl": "https://github.com/YeLuo45/animal-forest/archive/refs/heads/main.zip",
           "gitRepo": "https://github.com/YeLuo45/animal-forest",
           "tags": [
             "提案"
           ],
-          "createdAt": "2026-04-22",
-          "updatedAt": "2026-04-22"
+          "createdAt": "2026-04-24",
+          "updatedAt": "2026-04-24"
         }
       ]
     },
