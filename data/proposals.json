@@ -451,27 +451,27 @@
     },
     {
       "id": "PRJ-20260419-004",
-      "name": "TradingAgents-CN",
-      "description": "8x8三消游戏原型验证，纯HTML5 Canvas",
-      "url": "",
-      "gitRepo": "https://github.com/YeLuo45/TradingAgents-CN",
-      "createdAt": "2026-04-22",
-      "updatedAt": "2026-04-22",
+      "name": "match3-puzzle",
+      "description": "8x8三消游戏原型验证，纯HTML5 Canvas；5种颜色圆块、点击交换、3+连消、下落填补、分数系统、游戏结束判定",
+      "url": "https://yeluo45.github.io/match3-puzzle/",
+      "gitRepo": "https://github.com/YeLuo45/match3-puzzle",
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24",
       "proposals": [
         {
           "id": "P-20260419-004",
-          "name": "TradingAgents-CN",
-          "description": "8x8三消游戏原型验证，纯HTML5 Canvas",
+          "name": "match3-puzzle",
+          "description": "8x8三消游戏原型验证，纯HTML5 Canvas；5种颜色圆块、点击交换、3+连消、下落填补、分数系统、游戏结束判定",
           "type": "package",
-          "status": "in_dev",
-          "url": "",
-          "packageUrl": "https://github.com/YeLuo45/TradingAgents-CN/archive/refs/heads/main.zip",
-          "gitRepo": "https://github.com/YeLuo45/TradingAgents-CN",
+          "status": "active",
+          "url": "https://yeluo45.github.io/match3-puzzle/",
+          "packageUrl": "https://github.com/YeLuo45/match3-puzzle/archive/refs/heads/main.zip",
+          "gitRepo": "https://github.com/YeLuo45/match3-puzzle",
           "tags": [
             "游戏"
           ],
-          "createdAt": "2026-04-22",
-          "updatedAt": "2026-04-22"
+          "createdAt": "2026-04-24",
+          "updatedAt": "2026-04-24"
         }
       ]
     },
@@ -556,7 +556,7 @@
     {
       "id": "PRJ-20260424-002",
       "name": "hermes-协作服务器消息转发机制重构",
-      "description": "协作服务器消息转发机制重构；通过 ACP 适配器连接运行中的 Hermes Agent，复用其网络栈和会话状态；修复了 subprocess .env 加载问题（已提交）",
+      "description": "协作服务器消息转发机制重构；通过 DirectAgentClient (subprocess) 调用 Hermes AIAgent，显式传递 ANTHROPIC_API_KEY 环境变量解决凭证问题；3次连续测试100%成功响应；修复了 .env 加载问题和 API key 传递问题（commit 74469db → 51ef8f8）",
       "url": "",
       "gitRepo": "",
       "createdAt": "2026-04-24",
@@ -565,9 +565,9 @@
         {
           "id": "P-20260424-002",
           "name": "hermes-协作服务器消息转发机制重构",
-          "description": "协作服务器消息转发机制重构；通过 ACP 适配器连接运行中的 Hermes Agent，复用其网络栈和会话状态；修复了 subprocess .env 加载问题（已提交）",
+          "description": "协作服务器消息转发机制重构；通过 DirectAgentClient (subprocess) 调用 Hermes AIAgent，显式传递 ANTHROPIC_API_KEY 环境变量解决凭证问题；3次连续测试100%成功响应；修复了 .env 加载问题和 API key 传递问题（commit 74469db → 51ef8f8）",
           "type": "package",
-          "status": "in_dev",
+          "status": "active",
           "url": "",
           "packageUrl": "https://github.com/YeLuo45/hermes-协作服务器消息转发机制重构/archive/refs/heads/main.zip",
           "gitRepo": "",
