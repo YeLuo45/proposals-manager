@@ -530,22 +530,50 @@
     {
       "id": "PRJ-20260424-001",
       "name": "OpenMAIC",
-      "description": "Open Multi-Agent Interactive Classroom — 开放式多智能体交互课堂；一键启动沉浸式多智能体学习体验；基于 THU-MAIC/OpenMAIC fork；TypeScript；AGPL-3.0",
+      "description": "Open Multi-Agent Interactive Classroom — 开放式多智能体交互课堂；forked from THU-MAIC/OpenMAIC (16311 stars)；pnpm + Next.js 16；需配置 LLM API Key 使用",
       "url": "",
       "gitRepo": "https://github.com/YeLuo45/OpenMAIC",
       "createdAt": "2026-04-24",
       "updatedAt": "2026-04-24",
-      "domain": "AI",
       "proposals": [
         {
           "id": "P-20260424-001",
           "name": "OpenMAIC",
-          "description": "Open Multi-Agent Interactive Classroom — 开放式多智能体交互课堂；forked from THU-MAIC/OpenMAIC；TypeScript；支持多智能体协作学习场景；AGPL-3.0 开源协议",
+          "description": "Open Multi-Agent Interactive Classroom — 开放式多智能体交互课堂；forked from THU-MAIC/OpenMAIC (16311 stars)；pnpm + Next.js 16；需配置 LLM API Key 使用",
           "type": "package",
           "status": "active",
           "url": "",
           "packageUrl": "https://github.com/YeLuo45/OpenMAIC/archive/refs/heads/main.zip",
-          "tags": ["AI", "多智能体", "TypeScript", "教育"],
+          "gitRepo": "https://github.com/YeLuo45/OpenMAIC",
+          "tags": [
+            "提案"
+          ],
+          "createdAt": "2026-04-24",
+          "updatedAt": "2026-04-24"
+        }
+      ]
+    },
+    {
+      "id": "PRJ-20260424-002",
+      "name": "hermes-协作服务器消息转发机制重构",
+      "description": "协作服务器消息转发机制重构；解决消息无法转发给本地 Hermes Agent 进程的问题；期望通过 WebSocket 转发消息给真正的 Agent 进程",
+      "url": "",
+      "gitRepo": "",
+      "createdAt": "2026-04-24",
+      "updatedAt": "2026-04-24",
+      "proposals": [
+        {
+          "id": "P-20260424-002",
+          "name": "hermes-协作服务器消息转发机制重构",
+          "description": "协作服务器消息转发机制重构；解决消息无法转发给本地 Hermes Agent 进程的问题；期望通过 WebSocket 转发消息给真正的 Agent 进程",
+          "type": "package",
+          "status": "archived",
+          "url": "",
+          "packageUrl": "https://github.com/YeLuo45/hermes-协作服务器消息转发机制重构/archive/refs/heads/main.zip",
+          "gitRepo": "",
+          "tags": [
+            "Web"
+          ],
           "createdAt": "2026-04-24",
           "updatedAt": "2026-04-24"
         }
