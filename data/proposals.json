@@ -556,7 +556,7 @@
     {
       "id": "PRJ-20260424-002",
       "name": "hermes-协作服务器消息转发机制重构",
-      "description": "协作服务器消息转发机制重构；解决消息无法转发给本地 Hermes Agent 进程的问题；期望通过 WebSocket 转发消息给真正的 Agent 进程",
+      "description": "协作服务器消息转发机制重构；通过 ACP 适配器连接运行中的 Hermes Agent，复用其网络栈和会话状态；修复了 subprocess .env 加载问题（已提交）",
       "url": "",
       "gitRepo": "",
       "createdAt": "2026-04-24",
@@ -565,14 +565,14 @@
         {
           "id": "P-20260424-002",
           "name": "hermes-协作服务器消息转发机制重构",
-          "description": "协作服务器消息转发机制重构；解决消息无法转发给本地 Hermes Agent 进程的问题；期望通过 WebSocket 转发消息给真正的 Agent 进程",
+          "description": "协作服务器消息转发机制重构；通过 ACP 适配器连接运行中的 Hermes Agent，复用其网络栈和会话状态；修复了 subprocess .env 加载问题（已提交）",
           "type": "package",
-          "status": "archived",
+          "status": "in_dev",
           "url": "",
           "packageUrl": "https://github.com/YeLuo45/hermes-协作服务器消息转发机制重构/archive/refs/heads/main.zip",
           "gitRepo": "",
           "tags": [
-            "Web"
+            "提案"
           ],
           "createdAt": "2026-04-24",
           "updatedAt": "2026-04-24"
