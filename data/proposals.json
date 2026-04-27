@@ -2,6 +2,21 @@
   "version": 2,
   "projects": [
     {
+      "projectId": "20260428-001",
+      "name": "3D打地鼠",
+      "pid": "P-20260428-001",
+      "type": "package",
+      "status": "delivered",
+      "engine": "Three.js 0.160.0 (CDN) + Vanilla JS",
+      "platform": "Web Browser",
+      "github": "https://github.com/YeLuo45/whack-a-mole-3d",
+      "deployment": "https://yeluo45.github.io/whack-a-mole-3d/",
+      "prd": "",
+      "acceptance": "accepted",
+      "techExpectations": "confirmed",
+      "lastUpdate": "2026-04-28"
+    },
+    {
       "projectId": "20260427-001",
       "name": "3D飞行棋大作战",
       "pid": "P-20260427-001",
