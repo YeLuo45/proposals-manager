@@ -606,32 +606,6 @@
       ]
     },
     {
-      "id": "PRJ-20250425-003",
-      "name": "dsw-fresh",
-      "description": "DSW新部署临时项目；含dist/源码/src/node_modules；非正式项目",
-      "url": "",
-      "gitRepo": "",
-      "createdAt": "2026-04-25",
-      "updatedAt": "2026-04-25",
-      "proposals": [
-        {
-          "id": "P-20250425-003",
-          "name": "dsw-fresh",
-          "description": "DSW新部署临时项目；含dist/源码/src/node_modules；非正式项目",
-          "type": "package",
-          "status": "active",
-          "url": "",
-          "packageUrl": "https://github.com/YeLuo45/dsw-fresh/archive/refs/heads/main.zip",
-          "gitRepo": "",
-          "tags": [
-            "提案"
-          ],
-          "createdAt": "2026-04-25",
-          "updatedAt": "2026-04-25"
-        }
-      ]
-    },
-    {
       "id": "PRJ-20250425-004",
       "name": "dsw-new-deploy",
       "description": "DSW新部署临时构建产物；PWA；sw.js + workbox缓存；非正式项目",
