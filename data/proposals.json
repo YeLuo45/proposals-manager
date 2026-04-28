@@ -31,7 +31,7 @@
       "id": "PRJ-20260427-001",
       "name": "flight-chess-3d",
       "description": "3D卡通飞行棋；React Three Fiber 3D渲染；传统模式+事件模式(幸运/厄运/传送/交换)；2-4人本地对战；Roblox风格卡通渲染；60FPS目标",
-      "url": "",
+      "url": "https://yeluo45.github.io/flight-chess-3d/",
       "gitRepo": "https://github.com/YeLuo45/flight-chess-3d",
       "createdAt": "2026-04-27",
       "updatedAt": "2026-04-27",
@@ -42,7 +42,7 @@
           "description": "3D卡通飞行棋；React Three Fiber 3D渲染；传统模式+事件模式(幸运/厄运/传送/交换)；2-4人本地对战；Roblox风格卡通渲染；60FPS目标",
           "type": "package",
           "status": "in_dev",
-          "url": "",
+          "url": "https://yeluo45.github.io/flight-chess-3d/",
           "packageUrl": "https://github.com/YeLuo45/flight-chess-3d/archive/refs/heads/main.zip",
           "gitRepo": "https://github.com/YeLuo45/flight-chess-3d",
           "tags": [
