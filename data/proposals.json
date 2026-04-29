@@ -982,6 +982,24 @@
         }
       ],
       "lastUpdate": "2026-04-30"
+    },
+    {
+      "id": "PRJ-20260430-002",
+      "name": "文档编辑器",
+      "slug": "doc-editor",
+      "description": "React + Tiptap 富文本编辑器，支持文档管理、自动保存、历史版本、Markdown/HTML/PDF 导出",
+      "repository": "https://github.com/YeLuo45/doc-editor",
+      "deployment": "https://yeluo45.github.io/doc-editor/",
+      "stage": "MVP",
+      "tags": [
+        "React",
+        "TypeScript",
+        "富文本编辑器",
+        "IndexedDB"
+      ],
+      "proposals": [
+        "P-20260430-002"
+      ]
     }
   ],
   "lastSync": "2026-04-30"
