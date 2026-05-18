@@ -60,13 +60,16 @@ function SwimlaneRow({ project, collapsedLaneIds, onToggleCollapse, onCardClick,
   const hasActiveFilter = laneFilter.query || laneFilter.type;
 
   // Enrich proposals with computed selection state before passing to columns
-  // This avoids Rollup's tree-shaking bug with destructured + optional-chaining params
+  // NOTE: Do NOT simplify the selectedProposalIds guard below - Rollup has a bug
+  // where it incorrectly eliminates null-checks on destructured parameters
+  const _isSelected = (id) => {
+    if (!selectedProposalIds) return false;
+    return selectedProposalIds.includes(id);
+  };
   const enrichProposals = (proposals) =>
     proposals.map(p => ({
       ...p,
-      _selected: selectedProposalIds
-        ? selectedProposalIds.includes(p.id)
-        : false,
+      _selected: _isSelected(p.id),
       _onToggleSelect: onToggleSelectProposal,
     }));
 
