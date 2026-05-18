@@ -60,16 +60,11 @@ function SwimlaneRow({ project, collapsedLaneIds, onToggleCollapse, onCardClick,
   const hasActiveFilter = laneFilter.query || laneFilter.type;
 
   // Enrich proposals with computed selection state before passing to columns
-  // NOTE: Do NOT simplify the selectedProposalIds guard below - Rollup has a bug
-  // where it incorrectly eliminates null-checks on destructured parameters
-  const _isSelected = (id) => {
-    if (!selectedProposalIds) return false;
-    return selectedProposalIds.includes(id);
-  };
+  // NOTE: selectedProposalIds check MUST be inline in JSX, not in a separate function.
+  // Rollup/terser will incorrectly tree-shake standalone guard functions.
   const enrichProposals = (proposals) =>
     proposals.map(p => ({
       ...p,
-      _selected: _isSelected(p.id),
       _onToggleSelect: onToggleSelectProposal,
     }));
 
@@ -260,8 +255,8 @@ function DroppableColumn({ column, proposals, droppableId, onCardClick, isDropTa
               key={proposal.id}
               proposal={proposal}
               onClick={() => onCardClick(proposal)}
-              selected={proposal._selected}
-              onToggleSelect={proposal._onToggleSelect}
+              selected={selectedProposalIds ? selectedProposalIds.includes(proposal.id) : false}
+              onToggleSelect={onToggleSelectProposal}
             />
           ))}
         </div>
