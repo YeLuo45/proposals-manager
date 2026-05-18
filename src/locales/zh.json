@@ -36,6 +36,7 @@
     "matchAll": "全部匹配(AND)",
     "filterResults": "筛选结果",
     "exportCsv": "导出 CSV",
+    "advanced": "高级筛选",
     "status": {
       "active": "待办",
       "in_dev": "进行中",

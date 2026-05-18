@@ -9,7 +9,7 @@ const STATUS_COLUMNS = [
   { id: 'done', title: '已完成 (Done)', color: 'bg-green-500' },
 ];
 
-function SwimlaneRow({ project, collapsedLaneIds, onToggleCollapse, onCardClick, onQuickCreate, overId, activeId, isColumnCollapsed, onToggleColumnCollapse, selectedProposalIds, onToggleSelectProposal, filteredColumns }) {
+function SwimlaneRow({ project, collapsedLaneIds, onToggleCollapse, onCardClick, onQuickCreate, overId, activeId, isColumnCollapsed, onToggleColumnCollapse, selectedProposalIds = [], onToggleSelectProposal, filteredColumns }) {
   const isCollapsed = collapsedLaneIds.has(project.id);
   
   // V7: Double-click to toggle collapse
