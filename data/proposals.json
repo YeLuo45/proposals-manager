@@ -2892,6 +2892,18 @@
       "gitRepo": "https://github.com/YeLuo45/ai-stock-simulation",
       "deploymentUrl": "https://yeluo45.github.io/ai-stock-simulation/",
       "description": ""
+    },
+    {
+      "id": "P-20260519-002",
+      "name": "AI多平台比价App (React Native)",
+      "projectId": "P-20260519-002",
+      "status": "active",
+      "type": "package",
+      "createdAt": "2026-05-19",
+      "updatedAt": "2026-05-19",
+      "gitRepo": "https://github.com/YeLuo45/ai-price-compare",
+      "deploymentUrl": "",
+      "description": "React Native (Expo), 自建爬虫, 生产包"
     }
   ]
 }
